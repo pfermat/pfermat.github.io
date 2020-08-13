@@ -63,7 +63,7 @@ $ sudo yum install php php-mysql
 $ sudo systemctl restart httpd.service
 {% endhighlight %}
 
-随后可以测试一下php是否正常运行，在CentOS默认的网站目录/var/www/html/下创建一个ino.php文件：
+随后可以测试一下php是否正常运行，在CentOS默认的网站目录/var/www/html/下创建一个info.php文件：
 {% highlight php %}
 <?php phpinfo(); ?>
 {% endhighlight %}
