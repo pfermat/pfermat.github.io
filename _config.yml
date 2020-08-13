@@ -20,7 +20,7 @@ text_skin: dark # "default" (default), "dark", "forest", "ocean", "chocolate", "
 highlight_theme: tomorrow-night # "default" (default), "tomorrow", "tomorrow-night", "tomorrow-night-eighties", "tomorrow-night-blue", "tomorrow-night-bright"
 url     : https://pfermat.github.io # the base hostname & protocol for your site e.g. https://www.someone.com
 baseurl : # does not include hostname
-theme : jekyll-text-theme
+# theme : jekyll-text-theme
 title   : AVASCULATE
 description: > # this means to ignore newlines until "Language & timezone"
   Reduce foe to half hp and stun foe for 1 round by purging blood vessels.
