@@ -1,1 +1,0 @@
-window.TEXT_SEARCH_DATA={'posts':[{'title':"2019春活",'url':"/2019/06/18/2019%E6%98%A5%E6%B4%BB.html"},{'title':"vmware共享文件夹挂载",'url':"/2019/06/18/vmware%E5%85%B1%E4%BA%AB%E6%96%87%E4%BB%B6%E5%A4%B9%E6%8C%82%E8%BD%BD.html"}]};
