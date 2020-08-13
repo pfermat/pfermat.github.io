@@ -1,0 +1,14 @@
+*~
+~*
+*.diff
+*.patch
+*.bak
+*.swp
+*.log
+*.gem
+Gemfile.lock
+_site/
+.sass-cache/
+.jekyll-metadata
+.jekyll-cache/
+public/
