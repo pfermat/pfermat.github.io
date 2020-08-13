@@ -26,7 +26,7 @@ titles:
 key: page-about
 ---
 
-## A wizard on the manifold.
+## Make KanColle Great Again.
 
 
 > 本blog使用了[TeXt](https://github.com/kitian616/jekyll-TeXt-theme)项目，非常感谢作者！
