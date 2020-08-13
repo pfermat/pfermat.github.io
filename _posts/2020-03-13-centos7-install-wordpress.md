@@ -3,7 +3,7 @@ layout: article
 title: CentOS7下wordpress安装
 aside:
   toc: true
-tags: centos wordpress tech
+tags: centos lamp wordpress tech
 key: centos7-install-wordpress
 comments: true
 ---
@@ -147,3 +147,82 @@ define('DB_USER', 'wordpressuser');
 define('DB_PASSWORD', 'password');
 {% endhighlight %}
 
+## 通过acme.sh获取证书
+
+### 安装acme.sh
+
+{% highlight shell %}
+$ curl https://get.acme.sh | sh
+{% endhighlight %}
+
+随后可以使用laias或者软链接到/usr/local/bin之类的方法，使acme.sh成为一个不用输入安装路径的命令。
+
+### 生成证书
+
+生成证书时需要确保域名解析正确，这里以cloudflare为例。至于cloudflare如何设置DNS之类的，可以自行搜索。
+登录cloudflare后获取自己的API Key。
+声明两个变量：
+
+{% highlight shell %}
+$ export CF_Token="sdfsdfsdfljlbjkljlkjsdfoiwje"
+$ export CF_Account_ID="xxxxxxxxxxxxx"
+{% endhighlight %}
+
+随后开始获取证书，等待信息提示完成即可：
+
+{% highlight shell %}
+$ acme.sh --issue --dns dns_cf -d example.com -d www.example.com
+{% endhighlight %}
+
+### 安装证书
+
+可以直接复制，不过acme推荐使用命令：
+
+{% highlight shell %}
+$ acme.sh --installcert -d example.com \
+--cert-file /path/to/certfile/in/apache/cert.pem \
+--key-file /path/to/keyfile/in/apache/key.pem \
+--fullchain-file /path/to/fullchain/certfile/apache/fullchain.pem \
+--reloadcmd "service apache2 reload"
+{% endhighlight %}
+
+## 配置apache
+
+{% highlight shell %}
+<VirtualHost *:443>
+        ServerName your.domain
+
+        ServerAdmin webmaster@example.com
+        DocumentRoot /var/www/wordpress
+        SSLEngine On
+
+        SSLCertificateFile your/cert/file
+        SSLCertificateKeyFile your/key/file
+
+        Alias /wp-content /var/www/wordpress/wp-content
+        <Directory /var/www/wordpress>
+            Options FollowSymLinks
+            AllowOverride Limit Options FileInfo
+            DirectoryIndex index.php
+            Require all granted
+        </Directory>
+        # 下面这段我也不知道为啥要加
+        <Directory /var/www/wordpress/wp-content>
+            Options FollowSymLinks
+            Require all granted
+        </Directory>
+        # CentOS里这个变量是不对的，注意修改
+        ErrorLog ${APACHE_LOG_DIR}/error.log
+        CustomLog ${APACHE_LOG_DIR}/access.log combined
+
+</VirtualHost>
+{% endhighlight %}
+
+最后打开浏览器，一切正常的话就可以看到wordpress的安装页面了。
+
+## 参考链接
+
+- [https://www.digitalocean.com/community/tutorials/how-to-install-the-apache-web-server-on-centos-7#step-2-%E2%80%94-checking-your-web-server](https://www.digitalocean.com/community/tutorials/how-to-install-the-apache-web-server-on-centos-7#step-2-%E2%80%94-checking-your-web-server)
+- [https://www.digitalocean.com/community/tutorials/how-to-install-wordpress-on-centos-7#prerequisites](https://www.digitalocean.com/community/tutorials/how-to-install-wordpress-on-centos-7#prerequisites)
+- [https://linuxize.com/post/install-php-7-on-centos-7/#configuring-php-7x-to-work-with-apache](https://linuxize.com/post/install-php-7-on-centos-7/#configuring-php-7x-to-work-with-apache)
+- [https://github.com/acmesh-official/acme.sh/wiki/%E8%AF%B4%E6%98%8E](https://github.com/acmesh-official/acme.sh/wiki/%E8%AF%B4%E6%98%8E)
