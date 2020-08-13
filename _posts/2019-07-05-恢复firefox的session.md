@@ -1,16 +1,18 @@
 ---
-title: vmware共享文件夹挂载
-tags: vmware, tech
-key: vmware-mount-shared-folders
+title: 恢复firefox的session
+tags: firefox, tech
+key: restore-firefox-session
 comments: true
 ---
 
-{% highlight shell %}
-$ vmhgfs-fuse .host:/$(vmware-hgfsclient) ~/some_mount_point
-{% endhighlight %}
+* 找到存储session的文件夹位置： C:\Documents and Settings\<Windows login/user name>\Application Data\Mozilla\Firefox\Profiles\<profile folder>
 
-<!--more-->
+* 将sessionstore.jsonlz4改名
 
-[Enabling shared folders with open-vm-tools][source]
+* 打开sessionstore-backups文件夹
 
-[source]:https://askubuntu.com/questions/580319/enabling-shared-folders-with-open-vm-tools
+* 将recovery.jsonlz4和recovery.backlz4改名
+
+* 将需要的session文件复制到上级文件夹，并改名为sessionstore.jsonlz4
+
+* 打开firefox
