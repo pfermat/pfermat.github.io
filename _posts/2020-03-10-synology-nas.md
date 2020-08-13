@@ -39,8 +39,8 @@ comments: true
 2. 使用普通的密码管理器，通过云同步密码文件。
 这里介绍第二种方法，使用KeePass。
 
-  - 使用Synology Drvie云同步密码文件，PC端当然没有问题，但是我的安卓端app无法找到DS Drive的文件，如果遇到同样的问题，可以换成比较旧的DS Cloud；
-  - 手机端选择顺手的app即可，我使用的是Keepass2Android，操作比较方便，有指纹设备的话还可以快速解锁。
+   - 使用Synology Drvie云同步密码文件，PC端当然没有问题，但是我的安卓端app无法找到DS Drive的文件，如果遇到同样的问题，可以换成比较旧的DS Cloud；
+   - 手机端选择顺手的app即可，我使用的是Keepass2Android，操作比较方便，有指纹设备的话还可以快速解锁。
 
 ## 内网穿透
 
