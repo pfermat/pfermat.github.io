@@ -106,3 +106,44 @@ $ mysql -u root -p
 > FLUSH PRIVILEGES;
 > exit
 {% endhighlight %}
+
+### 安装wordpress
+
+- 下载和解压最新版wordpress：
+{% highlight shell %}
+$ wget http://wordpress.org/latest.tar.gz
+$ tar xzvf latest.tar.gz
+{% endhighlight %}
+- 把文件复制到www目录：
+{% highlight shell %}
+$ cp -R ./wordpress /var/www/
+{% endhighlight %}
+- 创建一个上传文件的目录：
+{% highlight shell %}
+$ mkdir /var/www/wordpress/wp-content/uploads
+{% endhighlight %}
+- 改一下用户：
+{% highlight shell %}
+$ sudo chown -R apache:apache /var/www/wordpress/*
+{% endhighlight %}
+
+### 配置wordpress
+
+{% highlight shell %}
+$ cp wp-config-sample.php wp-config.php
+{% endhighlight %}
+
+打开wp-config.php，修改以下三处：
+
+{% highlight shell %}
+// ** MySQL settings - You can get this info from your web host ** //
+/** The name of the database for WordPress */
+define('DB_NAME', 'wordpress');
+
+/** MySQL database username */
+define('DB_USER', 'wordpressuser');
+
+/** MySQL database password */
+define('DB_PASSWORD', 'password');
+{% endhighlight %}
+
