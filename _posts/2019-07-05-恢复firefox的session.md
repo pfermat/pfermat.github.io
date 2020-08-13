@@ -1,6 +1,6 @@
 ---
 title: 恢复firefox的session
-tags: firefox, tech
+tags: firefox tech
 key: restore-firefox-session
 comments: true
 ---
