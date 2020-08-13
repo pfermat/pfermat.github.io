@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>AVASCULATE</title>
+    <description>Reduce foe to half hp and stun foe for 1 round by purging blood vessels.
+</description>
+    <link>http://localhost:4000/</link>
+    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Thu, 13 Aug 2020 11:12:37 +0800</pubDate>
+    <lastBuildDate>Thu, 13 Aug 2020 11:12:37 +0800</lastBuildDate>
+    <generator>Jekyll v4.1.1</generator>
+    
+      <item>
+        <title>vmware共享文件夹挂载</title>
+        <description>
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;vmhgfs-fuse .host:/&lt;span class=&quot;si&quot;&gt;$(&lt;/span&gt;vmware-hgfsclient&lt;span class=&quot;si&quot;&gt;)&lt;/span&gt; ~/some_mount_point&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;!--more--&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://askubuntu.com/questions/580319/enabling-shared-folders-with-open-vm-tools&quot;&gt;Enabling shared folders with open-vm-tools&lt;/a&gt;&lt;/p&gt;
+
+</description>
+        <pubDate>Tue, 18 Jun 2019 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2019/06/18/vmware%E5%85%B1%E4%BA%AB%E6%96%87%E4%BB%B6%E5%A4%B9%E6%8C%82%E8%BD%BD.html</link>
+        <guid isPermaLink="true">http://localhost:4000/2019/06/18/vmware%E5%85%B1%E4%BA%AB%E6%96%87%E4%BB%B6%E5%A4%B9%E6%8C%82%E8%BD%BD.html</guid>
+        
+        <category>vmware,</category>
+        
+        <category>tech</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>2019春活</title>
+        <description>&lt;p&gt;&lt;img src=&quot;/assets/images/kancolle/20190522_19263821.png&quot; alt=&quot;Image&quot; class=&quot;rounded&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/kancolle/20190524_15071617.png&quot; alt=&quot;Image&quot; class=&quot;rounded&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/kancolle/20190526_11123739.png&quot; alt=&quot;Image&quot; class=&quot;rounded&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/kancolle/20190604_12363198.png&quot; alt=&quot;Image&quot; class=&quot;rounded&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/kancolle/20190604_12383165.png&quot; alt=&quot;Image&quot; class=&quot;rounded&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/kancolle/20190605_12482167.png&quot; alt=&quot;Image&quot; class=&quot;rounded&quot; /&gt;&lt;/p&gt;
+
+</description>
+        <pubDate>Tue, 18 Jun 2019 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2019/06/18/2019%E6%98%A5%E6%B4%BB.html</link>
+        <guid isPermaLink="true">http://localhost:4000/2019/06/18/2019%E6%98%A5%E6%B4%BB.html</guid>
+        
+        <category>2019,</category>
+        
+        <category>艦これ,</category>
+        
+        <category>春活</category>
+        
+        
+      </item>
+    
+  </channel>
+</rss>
