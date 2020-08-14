@@ -98,3 +98,50 @@ verb 3
 {% endhighlight %}
 
 检查一下防火墙和TUN/TAP，随后启动服务器端。
+
+### 配置客户端
+
+客户端的配置与服务器端基本一致，对照着抄就可以。需要注意的是服务器地址，因为使用了frp转发，因此填写的应该是frps公网服务器的地址与frpc中`remote_port`的端口。
+
+### 其他配置
+
+*tls-auth*
+
+生成一个key：
+
+{% highlight shell %}
+$ openvpn --genkey --secret ta.key
+{% endhighlight %}
+
+将ta.key文件分别放到服务器端和客户端，在服务器端的配置文件中增加：
+
+{% highlight shell %}
+$ tls-auth ta.key 0
+{% endhighlight %}
+
+在客户端的配置文件中增加：
+
+{% highlight shell %}
+$ tls-auth ta.key 1
+{% endhighlight %}
+
+*访问内网其他机器*
+
+假设内网网段为192.168.0.0/24，按照默认设置，服务器端的ip是10.8.0.1，客户端分到的网段是10.8.0.1/24，虽然客户端可以访问服务器端，但是访问不了内网的其他机器，需要在服务器端设置。
+
+第一步，在服务器端的配置文件中增加：
+
+{% highlight shell %}
+push "route 192.168.0.0 255.255.255.0"
+{% endhighlight %}
+
+第二步，设置服务器端的iptables规则：
+
+{% highlight shell %}
+# iptables -t nat -A POSTROUTING -s 10.8.0.0/24 -o eth0 -j MASQUERADE
+{% endhighlight %}
+
+## 参考资料
+
+- [https://openvpn.net/community-resources/how-to/](https://openvpn.net/community-resources/how-to/)
+- [https://www.ilanni.com/?p=9877](https://www.ilanni.com/?p=9877)
