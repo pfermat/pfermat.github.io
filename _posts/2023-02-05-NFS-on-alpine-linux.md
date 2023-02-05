@@ -24,7 +24,7 @@ $ mount -t nfs ${NFS_SEVER}:${NFS_DIR} /mnt
 # Mount NFS on boot
 Add a line in `/etc/fstab`:
 {% highlight shell %}
-${NFS_SEVER}:${NFS_DIR} /mnt nfs \_netdev 0 0
+${NFS_SEVER}:${NFS_DIR} /mnt nfs _netdev 0 0
 {% endhighlight %}
 
 # LXC
